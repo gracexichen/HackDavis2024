@@ -1,4 +1,4 @@
-const {createUserEntry, verifyUser} = require('./authentication');
+const {createUserEntry, verifyUser} = require('./Authentication/authentication');
 
 function tester(req, res) {
     // Controller logic goes here

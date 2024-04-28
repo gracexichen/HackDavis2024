@@ -5,6 +5,7 @@ const { AuthenticationErrors }= require('./authenticationErrors');
 const url = "mongodb+srv://gracechen56607:goweekend3210@petfinder.h236iki.mongodb.net/?retryWrites=true&w=majority&appName=PetFinder";
 const client = new MongoClient(url);
 
+// HELPER FUNCTIONS
 async function userExists(users, username){
     const document = await users.findOne({username: username});
     if(document === null){
@@ -32,8 +33,6 @@ async function encryptPassword(password) {
 }
 
 async function verifyPassword(inputPassword, hashedPassword){
-    console.log(inputPassword)
-    console.log(hashedPassword)
     return new Promise((resolve, reject) => {
         bcrypt.compare(inputPassword, hashedPassword, (err, result) => {
             if (err) {
@@ -46,6 +45,8 @@ async function verifyPassword(inputPassword, hashedPassword){
         });
     });
 }
+
+// MAIN FUNCTIONS
 
 async function verifyUser(username, password){
     await client.connect();
