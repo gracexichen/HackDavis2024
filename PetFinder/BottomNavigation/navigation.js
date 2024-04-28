@@ -55,9 +55,9 @@ const Tabs = () => {
           component={Profile}
           options={{
             tabBarShowLabel: false,
-            tabBarIcon: () => (
-              <View style={{}}>
-                <Image source={require("../Profile/profile.png")} />
+            tabBarIcon: ({focused}) => (
+            <View style={{}}>
+                <Image source={focused? require("../Profile/profile_highlighted.png") : require("../Profile/profile.png")} />
               </View>
             ),
           }}
@@ -67,9 +67,4 @@ const Tabs = () => {
   );
 };
 
-const styles = StyleSheet.create({
-    container:{
-        height: '500',
-    }
-})
 export default Tabs;
