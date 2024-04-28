@@ -1,19 +1,23 @@
-const {createUserEntry} = require('./authentication');
+const {createUserEntry, verifyUser} = require('./authentication');
 
 function tester(req, res) {
     // Controller logic goes here
     res.send('Hello from tester!');
 }
 
-function addUser(req, res){
-    console.log(req.body.username);
-    console.log(req.body.password);
-    createUserEntry(req.body.username, req.body.password);
+async function addUser(req, res){
+    await createUserEntry(req.body.username, req.body.password);
     res.send("Should have logged the username/password");
+}
+
+async function authenticateUser(req, res){
+    await verifyUser(req.body.username, req.body.password);
+    res.send("User should have been verified");
 }
 
 // Export the controller function
 module.exports = {
     tester,
     addUser,
+    authenticateUser,
 };
