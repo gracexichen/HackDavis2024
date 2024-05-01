@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "PetFinder",
+    "slug": "PetFinder",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyB7uvoDyVN_Ckq_MDf1buMgX0vXk-E2z90"
+        }
+      }
+    },
+    "android": {
+    },
+    "web": {
+    },
+    "plugins": [
+    ]
+  }
+}
